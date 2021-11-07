@@ -9,6 +9,7 @@ dst_path = r"D:\\database\\kiwoomdb\\{:%Y%m%d}\\".format(datetime.datetime.now()
 if not os.path.exists(dst_path):
     os.makedirs(dst_path)
     for file in file_list:
+        if file == 'stg.db': continue
         new_path = shutil.move(f"{src_path}/{file}", f"{dst_path}/{file}")
         print(new_path)
 
